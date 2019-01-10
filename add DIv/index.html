@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dodawanie elementów na stronie </title>
+        <style>
+            button {
+                display: block;
+                margin: 10px auto;
+                background: transparent;
+                border: 2px solid red;
+                padding: 5px 5px;
+
+            }
+
+            div {
+                width: 30px;
+                height: 30px;
+                border: 2px solid red;
+                background-color: rgb(61, 13, 13);
+                float: left;
+                color: white;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            .circle {
+                background-color: rgb(185, 2, 11);
+                border-radius: 50%;
+                color: white;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <button>Utworz element</button>
+
+
+        <script>
+            const btn = document.querySelector("button");
+            let number = 1;
+            const addElement = function () {
+                const div = document.createElement('div');
+                div.textContent = number;
+                if (number % 5 === 0) {
+                    div.classList.add("circle")
+                }
+
+                document.body.appendChild(div);
+                number++;
+
+
+            }
+            btn.addEventListener("click", addElement);
+        </script>
+    </body>
+
+</html>
